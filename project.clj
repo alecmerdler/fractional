@@ -11,4 +11,5 @@
   :plugins [[lein-typed "0.4.2"]
             [lein-ring "0.12.2"]]
   :injections [(require 'clojure.core.typed)
-               (clojure.core.typed/install)])
+               (clojure.core.typed/install)]
+  :ring {:handler fractional.core/handler})

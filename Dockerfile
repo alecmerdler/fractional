@@ -1,6 +1,10 @@
 FROM clojure:alpine
 
-COPY . /usr/src/app
 WORKDIR /usr/src/app
+COPY project.clj /usr/src/app
+RUN lein deps
 
-CMD ["lein", "run"]
+COPY . /usr/src/app
+
+
+CMD ["lein", "ring", "server"]
