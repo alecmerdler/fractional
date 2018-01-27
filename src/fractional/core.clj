@@ -1,13 +1,13 @@
 (ns fractional.core
   (:require [liberator.core :refer [resource defresource]]
+            [clojure.data.json :as json]
             [ring.middleware.params :refer [wrap-params]]
             [compojure.core :refer [defroutes ANY]]))
 
 (defroutes app
-  (ANY "/" [] (resource :available-media-types ["text/html"]
+  (ANY "/" [] (resource :available-media-types ["application/json"]
                            :handle-ok (fn [ctx]
-                                        (format "<html>It's %d milliseconds since the beginning of the epoch."
-                                          (System/currentTimeMillis))))))
+                                        (json/json-str {:message "Hello world!"})))))
 
 (def handler 
   (-> app 

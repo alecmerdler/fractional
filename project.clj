@@ -7,6 +7,7 @@
                  [liberator "0.15.1"]
                  [compojure "1.6.0"]
                  [ring/ring-core "1.6.3"]
+                 [org.clojure/data.json "0.2.6"]
                  [org.clojure/core.typed "0.3.21"]]
   :plugins [[lein-typed "0.4.2"]
             [lein-ring "0.12.2"]]

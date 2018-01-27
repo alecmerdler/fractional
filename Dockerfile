@@ -6,5 +6,4 @@ RUN lein deps
 
 COPY . /usr/src/app
 
-
 CMD ["lein", "ring", "server"]
